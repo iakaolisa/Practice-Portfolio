@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About</title>
+    <style>
+      body, h1, h2, h3, p, a, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #000000;
+}
+   /* Header links styles */
+.header-links {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    font-size:large;
+    gap:40px
+}
+
+.header-links a {
+    margin-right: 20px;
+    color: #fff;
+    text-decoration: none;
+    position: relative; /* Required for the pseudo-element */
+}
+
+.header-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Thickness of the line */
+    background-color: #dbb60e;
+    bottom: -2px; /* Position the line below the text */
+    left: 0;
+    transform: scaleX(0); /* Start with zero width */
+    transform-origin: left;
+    transition: transform 0.3s ease; /* Smooth animation */
+}
+
+/* Style for the current page link */
+.header-links a.current-page::after {
+    background-color: #dbb60e; /* Yellow color */
+    transform: scaleX(1); /* Expand the line */
+}
+
+.header-links a:hover::after {
+    transform: scaleX(1); /* Expand the line on hover */
+}
+        
+.header-link {
+    margin-right: 20px; /* Adjust spacing between links */
+    color: #fff; /* Text color */
+    text-decoration: none;
+    font-family: monospace;
+}
+
+.about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    background-color: rgb(0, 0, 0);
+    /* ... Other styling ... */
+}
+
+.about-image {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+}
+
+.about-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 1px 5px 15px #dbb60e;
+}
+
+.about-text {
+    flex: 1;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 24px;
+    color: #dbb60e;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.sub-section-title {
+    font-size: 24px;
+    color: #dbb60e;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.sub-section-title2 {
+    font-size: 24px;
+    color: #dbb60e;
+    margin-top: 20px;
+    margin-bottom: 10px;    
+}
+
+ /* Calendar styles */
+ .calendar {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.calendar th,
+.calendar td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.highlighted {
+    background-color: #dbb60e;
+    color: #fff;
+}
+
+/* Contact styles */
+.contact {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+    border-top: 3px solid #fff; /* Add a white-colored top border */
+}
+.contact-description {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.contact-footer {
+    text-align: left;
+    margin-top: 10px; /* Add some spacing from the social links */
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s ease; /* Add a smooth transition */
+}
+
+.social-links a:hover {
+    transform: scale(1.2); /* Zoom-in effect on hover */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <!-- ... Header content ... -->
+                   <div class="header-links">
+                <a href="Home.html" class="header-link">Home</a>
+                <a href="about.html" class="header-link current-page">About</a>
+                <a href="Projects.html" class="header-link">Projects</a>
+                <a href="Resume.html" class="header-link">Resume</a>
+            </div>
+
+    </header>
+
+    <section class="about-me">
+        <div class="about-image">
+            <img src="My Photo 1.jpg" alt="About Me Image">
+        </div>
+        <div class="about-text">
+            <h2 class="section-title">About Me</h2>
+            <p>Hello there! I'm Akaolisa, your friendly neighborhood Web Developer and Creative UX Designer.
+
+                Imagine a world where digital experiences are not just functional, but enchanting. That's where I come in. With a keyboard as my paintbrush and code as my canvas, I craft the online spaces that make people say, "Wow, that's amazing!"
+                
+                Web development is my playground, and I love turning intricate lines of code into sleek websites and powerful applications. But I'm not just about the technical stuff – I believe in the magic of design. User Experience (UX) is my secret sauce; it's what makes your heart skip a beat when you navigate through a site I've designed.
+                
+                From designing user-friendly e-commerce platforms that make shopping a breeze, to creating portfolio websites that tell stories through pixels, I'm all about bringing imagination to life. My superpower is blending creativity with technology, and the result is websites that don't just work, but inspire.
+                
+                But wait, there's more! UI/UX is my jam, and I create interfaces that are not just eye candy, but a joy to use. I dive into the minds of users to design interfaces that make them feel like they're being guided by an old friend.
+                
+                So, whether you're a fellow creative, a tech enthusiast, or just someone who loves beautifully functional websites, I'm here to take you on a digital journey. Join me in exploring the colorful world of web development and UX design through my portfolio. Get ready to see pixels dance and websites come to life!
+                
+                Let's make the web a better place, one pixel at a time.</p>
+                <h3 class="sub-section-title">What I do when I'm not coding/Designing</h3>
+                <ul>
+                    <li>Travelling</li>
+                    <li>Brainstorming</li>
+                    <li>Reading</li>
+                    <li>Playing Video Games</li>
+                </ul>
+                <h4 class="sub-section-title2">Days I Code/Design</h4>
+                <table class="calendar">
+                    <thead>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>7</td>
+                            <td class="highlighted">1</td>
+                            <td>2</td>
+                            <td class="highlighted">3</td>
+                            <td>4</td>
+                            <td class="highlighted">5</td>
+                            <td>6</td>
+                        </tr>
+                        <!-- ... Continue for other weeks ... -->
+                    </tbody>
+                </table>
+            </div>       
+         </section>
+
+<!-- ... Footer sections ... -->
+<section class="contact">
+    <div class="contact-container">
+        <p class="contact-description">Interested in working together or have a question? Feel free to reach out!</p>
+
+        <div class="social-links">
+            <a href="https://twitter.com/i_akaolisa" target="_blank"><img src="twitter-logo.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/august_the20th/" target="_blank"><img src="instagram-logo.png" alt="Instagram"></a>
+            <a href="https://www.behance.net/iakaolisa" target="_blank"><img src="behance-logo.png" alt="Behance"></a>
+            <a href="https://github.com/iakaolisa" target="_blank"><img src="github-logo.png" alt="GitHub"></a>
+            <a href="https://wa.me/+2349070811869" target="_blank"><img src="whatsapp-logo.png" alt="WhatsApp"></a>
+        </div>
+
+        <footer class="contact-footer">
+            &copy; 2023 Akaolisa | All rights reserved
+        </footer>
+    </div>
+</section>
+</body>
+</html>

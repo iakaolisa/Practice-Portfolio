@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <style>
+/* Reset some default styles */
+body, h1, h2, h3, p, a, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #000000;
+}
+
+/* Header styles */
+.hero {
+    color: #fff;
+    text-align:center;
+    text-transform: Capitalize;
+    font-family:cursive;
+    font-weight: bold;
+    font-size:150%;
+    padding: 350px; /* Increase the top and bottom padding */
+    height: 30vh; /* Adjust the height as needed */
+}
+
+.hero-title {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero-tagline {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.hero-cta {
+    display: inline-block;
+    background-color: #dbb60e;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Header links styles */
+.header-links {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    font-size:large;
+    gap:40px
+}
+
+.header-links a {
+    margin-right: 20px;
+    color: #fff;
+    text-decoration: none;
+    position: relative; /* Required for the pseudo-element */
+}
+
+.header-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Thickness of the line */
+    background-color: #dbb60e;
+    bottom: -2px; /* Position the line below the text */
+    left: 0;
+    transform: scaleX(0); /* Start with zero width */
+    transform-origin: left;
+    transition: transform 0.3s ease; /* Smooth animation */
+}
+
+/* Style for the current page link */
+.header-links a.current-page::after {
+    background-color: #dbb60e; /* Yellow color */
+    transform: scaleX(1); /* Expand the line */
+}
+
+.header-links a:hover::after {
+    transform: scaleX(1); /* Expand the line on hover */
+}
+        
+.search-bar {
+    position: absolute;
+    top: 250px; /* Adjust the top spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;; /* Adjust the width as needed */
+    max-width: 900px; /* Limit the width */
+    height: 40px; /* Adjust the height as needed */
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    border-radius: 20px; /* Curved edges */
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 2; /* Place above other content */
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    background: none;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    &::placeholder {
+    color: #ffffff9f; /* Change to the desired color */
+    }
+}
+
+
+.header-link {
+    margin-right: 20px; /* Adjust spacing between links */
+    color: #fff; /* Text color */
+    text-decoration: none;
+    font-family: monospace;
+}
+
+/* Project styles */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 50px 0;
+}
+
+.project {
+    display: flex;
+    flex-direction: row;
+    width: 45%; /* Adjust this value to control the width of each project */
+    margin-bottom: 50px;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-image {
+    flex: 1;
+}
+
+.project-image img {
+    width: 100%; /* Ensure the image takes the entire container */
+    height: 100%; /* Maintain the image's aspect ratio */
+    object-fit: cover; /* Maintain image aspect ratio and cover the container */
+    border-radius: 10px;
+}
+
+.project-description {
+    flex: 1;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    background-color: grey;
+    /* ... Other styling ... */
+}
+
+.about-image {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+}
+
+.about-image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 1px 5px 15px #dbb60e;
+}
+
+.about-text {
+    flex: 1;
+    color:black;
+    padding: 20px;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* Contact styles */
+.contact {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 50px;
+    border-top: 3px solid #fff; /* Add a white-colored top border */
+}
+.contact-description {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.contact-footer {
+    text-align: left;
+    margin-top: 10px; /* Add some spacing from the social links */
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    transition: transform 0.3s ease; /* Add a smooth transition */
+}
+
+.social-links a:hover {
+    transform: scale(1.2); /* Zoom-in effect on hover */
+}
+
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="Search...eg: UX Design">
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Ifeanyi Bernard Akaolisa</h1>
+            <p class="hero-tagline">Web Developer & UX Designer</p>
+            <div class="header-links">
+                <a href="Home.html" class="header-link current-page">Home</a>
+                <a href="about.html" class="header-link">About</a>
+                <a href="Projects.html" class="header-link">Projects</a>
+                <a href="Resume.html" class="header-link">Resume</a>
+            </div>
+            <a href="Projects.html" class="hero-cta">Explore My Work</a>
+        </div>
+    </header>
+
+    <section class="projects"style="margin-top: 0px;">
+        <!-- Project 1 -->
+        <div class="project">
+            <!-- Project 1 Image -->
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1631624215749-b10b3dd7bca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80">
+            </div>
+            <!-- Project 1 Description -->
+            <div class="project-description">
+                <h3 class="project-title">Web Development - E-commerce Website</h3>
+                <p>Discover the world of online shopping with our dynamic e-commerce website. Seamlessly browse through a wide range of products, add items to your cart, and experience a secure checkout process. This project showcases my expertise in creating user-friendly interfaces and implementing robust backend functionality.</p>
+            </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="project reverse">
+            <!-- Project 2 Description -->
+            <div class="project-description">
+                <h3 class="project-title">Web Development - Portfolio Website</h3>
+                <p>Explore my own portfolio website, designed and developed to showcase my skills, projects, and experiences. This platform not only reflects my proficiency in web development but also highlights my design sensibilities. Discover my journey, view my work, and get to know me better through this interactive website.</p>
+            </div>
+            <!-- Project 2 Image -->
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1608306448197-e83633f1261c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80">
+            </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="project">
+            <!-- Project 3 Image -->
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1536148935331-408321065b18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Project 3">
+            </div>
+            <!-- Project 3 Description -->
+            <div class="project-description">
+                <h3 class="project-title">Web Development - Blog Platform</h3>
+                <p>Dive into the world of content creation with our custom blog platform. This project demonstrates my ability to build dynamic and engaging websites that allow users to create, publish, and interact with articles. From user authentication to intuitive article management, this project exemplifies my web development capabilities.</p>
+            </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="project reverse">
+            <!-- Project 4 Description -->
+            <div class="project-description">
+                <h3 class="project-title">UI/UX Design - Mobile App Redesig</h3>
+                <p>Immerse yourself in the realm of user interface and experience design with our mobile app redesign. This project focuses on enhancing user interaction, visual aesthetics, and overall user experience. Through meticulous attention to detail and user-centered design principles, this project exemplifies my UI/UX design proficiency.
+
+                    Feel free to modify these descriptions to align with your specific projects and experiences.</p>
+            </div>
+            <!-- Project 4 Image -->
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1618788372246-79faff0c3742?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80" alt="Project 4">
+            </div>
+        </div>
+    </section>
+
+    <section class="about-me">
+        <div class="about-image">
+            <img src="My Photo 1.jpg" alt="About Me Image">
+        </div>
+        <div class="about-text">
+            <h2 class="section-title">About Me</h2>
+            <p>Hello there! I'm Akaolisa, your friendly neighborhood Web Developer and Creative UX Designer.
+
+                Imagine a world where digital experiences are not just functional, but enchanting. That's where I come in. With a keyboard as my paintbrush and code as my canvas, I craft the online spaces that make people say, "Wow, that's amazing!"
+                
+                Web development is my playground, and I love turning intricate lines of code into sleek websites and powerful applications. But I'm not just about the technical stuff – I believe in the magic of design. User Experience (UX) is my secret sauce; it's what makes your heart skip a beat when you navigate through a site I've designed.
+                
+                From designing user-friendly e-commerce platforms that make shopping a breeze, to creating portfolio websites that tell stories through pixels, I'm all about bringing imagination to life. My superpower is blending creativity with technology, and the result is websites that don't just work, but inspire.
+                
+                But wait, there's more! UI/UX is my jam, and I create interfaces that are not just eye candy, but a joy to use. I dive into the minds of users to design interfaces that make them feel like they're being guided by an old friend.
+                
+                So, whether you're a fellow creative, a tech enthusiast, or just someone who loves beautifully functional websites, I'm here to take you on a digital journey. Join me in exploring the colorful world of web development and UX design through my portfolio. Get ready to see pixels dance and websites come to life!
+                
+                Let's make the web a better place, one pixel at a time.</p>
+        </div>
+    </section>
+<!-- ... Other sections ... -->
+<section class="contact">
+    <div class="contact-container">
+        <p class="contact-description">Interested in working together or have a question? Feel free to reach out!</p>
+
+        <div class="social-links">
+            <a href="https://twitter.com/i_akaolisa" target="_blank"><img src="twitter-logo.png" alt="Twitter"></a>
+            <a href="https://www.instagram.com/august_the20th/" target="_blank"><img src="instagram-logo.png" alt="Instagram"></a>
+            <a href="https://www.behance.net/iakaolisa" target="_blank"><img src="behance-logo.png" alt="Behance"></a>
+            <a href="https://github.com/iakaolisa" target="_blank"><img src="github-logo.png" alt="GitHub"></a>
+            <a href="https://wa.me/+2349070811869" target="_blank"><img src="whatsapp-logo.png" alt="WhatsApp"></a>
+        </div>
+
+        <footer class="contact-footer">
+            &copy; 2023 Akaolisa | All rights reserved
+        </footer>
+    </div>
+</section>
+<!-- ... Rest of the HTML ... -->
+</body>
+</html>
